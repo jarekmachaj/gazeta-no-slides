@@ -1,9 +1,10 @@
-var method = {2 : "QueryString", 3 : "Comma", 5 : "Comma"}
 var pageCount = $('span.page').html() == null ? 0 :  $('span.page').html().split('/')[1];
 var currentUrl = document.URL;
 var pagesUrls = [];
+var pagesContents = [];
 var rootURL;
 
+var method = {2 : "QueryString", 3 : "Comma", 5 : "Comma"}
 function getMethod(URL){
 	var comCounter = URL.split(',').length - 1;
 	return method[comCounter];
@@ -24,13 +25,15 @@ function getPagesUrls(URL){
 	rootURL = getRootUrl(URL);
 
 	if (getMethod(URL) == "QueryString"){
-		for (var i = 0; i < pageCount; i++){
-			pagesAddresses[i] = rootURL + "?i=" + i;
+		pagesAddresses[0] = rootURL;
+		for (var i = 2; i <= pageCount; i++){
+			pagesAddresses[i-1] = rootURL + "?i=" + i;
 		}
 	} else {
 		var tempUrlArr = rootURL.split('.html');
-		for (var i = 1; i <= pageCount; i++) {
-			pagesAddresses[i] =  tempUrlArr[0] + ',,,' + i; 
+		pagesAddresses[0] =  tempUrlArr[0] + '.html';
+		for (var i = 2; i <= pageCount; i++) {
+			pagesAddresses[i-1] =  tempUrlArr[0] + ',,,' + i + '.html'; 
 		}
 	}
 
@@ -39,8 +42,7 @@ function getPagesUrls(URL){
 
 
 function getContents(URL){
-	pagesUrls.length = 0;
-	var pagesContents = [];
+	pagesUrls.length = 0;	
 	pagesUrls = getPagesUrls(URL);
 	var length = pagesUrls.length;
 
@@ -49,11 +51,12 @@ function getContents(URL){
 	console.log(imgURL);
 
 	for (var index = 0; index < length; index++){
-		loadContentAndShow(pagesUrls[index], pagesContents, index);
+		loadContentAndShow(pagesUrls[index], index);
 	}
 }
 
-function loadContentAndShow(url, pagesContents, index){
+function loadContentAndShow(url, index){
+	console.log(url);
 	$.ajax({
         url: pagesUrls[index],
         type: 'get',
@@ -63,6 +66,7 @@ function loadContentAndShow(url, pagesContents, index){
         	console.log("iter: " + index);
         	console.log("pagesContents.length: " + pagesContents.length);
             pagesContents[index] = data;
+            console.log("Length: " + pagesContents.length);
             if(pagesContents.length >= pagesUrls.length)
             {
             	$("#gazeta_article").html("");	
@@ -78,10 +82,16 @@ function loadContentAndShow(url, pagesContents, index){
 }
 
 function processContent(contentDoc){
+	var lead = $($.parseHTML(contentDoc)).find("#gazeta_article_lead");
+	var title = $($.parseHTML(contentDoc)).find(".navigation span")[0];
 	var gazetaImage = $($.parseHTML(contentDoc)).find("#gazeta_article_image");
+	var gazetaImage2 = $($.parseHTML(contentDoc)).find("#gazeta_article_image_new");
 	var gazetaBody = $($.parseHTML(contentDoc)).find("#gazeta_article_body");
 	var content = $("<div></div>");
+	content.append(lead);
+	content.append("<div>" + (title ? title.innerHTML : "") + "</div>");
 	content.append(gazetaImage);
+	content.append(gazetaImage2);
 	content.append(gazetaBody); 
 	return content;
 }

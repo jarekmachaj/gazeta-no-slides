@@ -7,7 +7,10 @@
     "web_accessible_resources": ["ajax-loader.gif"],   
     "content_scripts": [
       {
-        "matches": ["http://deser.pl/*", "http://www.deser.pl/*", "http://plotek.pl/*", "http://www.plotek.pl/*", "http://technologie.gazeta.pl/*", "http://www.technologie.gazeta.pl/*"],
+        "matches": ["http://deser.pl/*", "http://www.deser.pl/*", 
+          "http://plotek.pl/*", "http://www.plotek.pl/*", 
+          "http://technologie.gazeta.pl/*", "http://www.technologie.gazeta.pl/*",
+          "http://moto.pl/*", "http://www.moto.pl/*"],
         "js": ["jquery.js", "noslides.js"],
         "css": ["style.css"]
       }
