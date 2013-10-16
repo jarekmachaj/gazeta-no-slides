@@ -1,10 +1,10 @@
+var method = {2 : "QueryString", 3 : "Comma", 5 : "Comma"}
 var pageCount = $('span.page').html() == null ? 0 :  $('span.page').html().split('/')[1];
 var currentUrl = document.URL;
 var pagesUrls = [];
 var pagesContents = [];
 var rootURL;
 
-var method = {2 : "QueryString", 3 : "Comma", 5 : "Comma"}
 function getMethod(URL){
 	var comCounter = URL.split(',').length - 1;
 	return method[comCounter];
@@ -25,9 +25,8 @@ function getPagesUrls(URL){
 	rootURL = getRootUrl(URL);
 
 	if (getMethod(URL) == "QueryString"){
-		pagesAddresses[0] = rootURL;
-		for (var i = 2; i <= pageCount; i++){
-			pagesAddresses[i-1] = rootURL + "?i=" + i;
+		for (var i = 0; i < pageCount; i++){
+			pagesAddresses[i] = rootURL + "?i=" + i;
 		}
 	} else {
 		var tempUrlArr = rootURL.split('.html');
@@ -89,13 +88,12 @@ function processContent(contentDoc){
 	var gazetaBody = $($.parseHTML(contentDoc)).find("#gazeta_article_body");
 	var content = $("<div></div>");
 	content.append(lead);
-	content.append("<div>" + (title ? title.innerHTML : "") + "</div>");
+	content.append('<div class="slideTitle">' + (title ? title.innerHTML : "") + "</div>");
 	content.append(gazetaImage);
 	content.append(gazetaImage2);
 	content.append(gazetaBody); 
 	return content;
 }
-
 
 $(".navigation").prepend('<div id="loadAll" style="float: left"><a id="loadAllClick" href="javascript:void(0)">Ładuj wszystko</a></div>');
 $("#loadAllClick").click(function(){

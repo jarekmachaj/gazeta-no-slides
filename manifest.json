@@ -1,8 +1,9 @@
   {
     "manifest_version": 3,
     "name": "Gazeta No slides",
-    "description": "lalalala",
+    "description": "One click. No more slides.",
     "version": "3.0",
+    "options_page": "options.html",
     "permissions": [ "tabs", "http://*/*" ],
     "web_accessible_resources": ["ajax-loader.gif"],   
     "content_scripts": [
