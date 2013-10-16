@@ -2,6 +2,8 @@
 	color: black;
 	font-weight: bold;
 	font-size: 16pt;
+	margin-top: 5px !important;
+	margin-bottom: 5px !important;
 }
 
 .loadButton {
