@@ -95,7 +95,12 @@ function processContent(contentDoc){
 	return content;
 }
 
-$("#gazeta_article_tools").after('<div id="loadAll"><a id="loadAllClick" class="loadButton" href="javascript:void(0)">Ładuj wszystko</a></div>');
+
+var topWrap = $("#gazeta_article_tools");
+if (topWrap.length == 0)
+	topWrap = $("#gazeta_article_author"); 
+
+$(topWrap).after('<div id="loadAll"><a id="loadAllClick" class="loadButton" href="javascript:void(0)">Ładuj wszystko</a></div>');
 $("#loadAllClick").click(function(){
 	console.log("clicked");
 	getContents(document.URL);	

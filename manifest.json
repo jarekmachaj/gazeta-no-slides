@@ -11,7 +11,8 @@
         "matches": ["http://deser.pl/*", "http://www.deser.pl/*", 
           "http://plotek.pl/*", "http://www.plotek.pl/*", 
           "http://technologie.gazeta.pl/*", "http://www.technologie.gazeta.pl/*",
-          "http://moto.pl/*", "http://www.moto.pl/*"],
+          "http://moto.pl/*", "http://www.moto.pl/*",
+          "http://wyborcza.pl/*", "http://www.wyborcza.pl/*"],
         "js": ["jquery.js", "noslides.js"],
         "css": ["style.css"]
       }
