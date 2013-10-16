@@ -3,3 +3,14 @@
 	font-weight: bold;
 	font-size: 16pt;
 }
+
+.loadButton {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: white;
+	font-weight: bold;
+	font-size: 12pt;
+	border-color: #D00000;
+	border-width: 1px;
+	background: #FF0000;
+}

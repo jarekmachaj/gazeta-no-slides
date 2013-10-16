@@ -95,7 +95,7 @@ function processContent(contentDoc){
 	return content;
 }
 
-$(".navigation").prepend('<div id="loadAll" style="float: left"><a id="loadAllClick" href="javascript:void(0)">Ładuj wszystko</a></div>');
+$("#gazeta_article_tools").after('<div id="loadAll"><a id="loadAllClick" class="loadButton" href="javascript:void(0)">Ładuj wszystko</a></div>');
 $("#loadAllClick").click(function(){
 	console.log("clicked");
 	getContents(document.URL);	
