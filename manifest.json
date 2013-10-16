@@ -1,0 +1,15 @@
+  {
+    "manifest_version": 3,
+    "name": "Gazeta No slides",
+    "description": "lalalala",
+    "version": "3.0",
+    "permissions": [ "tabs", "http://*/*" ],
+    "web_accessible_resources": ["ajax-loader.gif"],   
+    "content_scripts": [
+      {
+        "matches": ["http://deser.pl/*", "http://www.deser.pl/*", "http://plotek.pl/*", "http://www.plotek.pl/*", "http://technologie.gazeta.pl/*", "http://www.technologie.gazeta.pl/*"],
+        "js": ["jquery.js", "noslides.js"],
+        "css": ["style.css"]
+      }
+    ]
+}
