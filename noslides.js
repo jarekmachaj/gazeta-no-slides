@@ -1,3 +1,4 @@
+//paging method
 var method = {2 : "QueryString", 3 : "Comma", 5 : "Comma"}
 var pageCount = $('span.page').html() == null ? 0 :  $('span.page').html().split('/')[1];
 var currentUrl = document.URL;
