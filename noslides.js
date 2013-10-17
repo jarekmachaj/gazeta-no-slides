@@ -1,18 +1,31 @@
 //paging method
-var method = {2 : "QueryString", 3 : "Comma", 5 : "Comma"}
+var method = { QueryString : "QueryString", Comma : "Comma"}
+var pageMethod;
 var pageCount = $('span.page').html() == null ? 0 :  $('span.page').html().split('/')[1];
 var currentUrl = document.URL;
 var pagesUrls = [];
 var pagesContents = [];
 var rootURL;
 
-function getMethod(URL){
-	var comCounter = URL.split(',').length - 1;
-	return method[comCounter];
+function getMethod(){
+
+	if(pageMethod != undefined) return pageMethod;
+
+	var urlToParse = "";
+	if ($("a.next").length > 0)
+		urlToParse = $("a.next")[0].href;
+	else
+		urlToParse = $("a.prev")[0].href;
+
+	var urlArr = urlToParse.split(',');
+	if(urlArr[urlArr.length - 2] == "")
+		return pageMethod = method.Comma;
+
+	return pageMethod = method.QueryString;
 }
 
 function getRootUrl(URL){
-	if (getMethod(URL) == "QueryString"){
+	if (getMethod() == method.QueryString){
 		var urlArr = document.URL.split('.html');
 		return urlArr[0] + '.html';
 	} else {
@@ -25,7 +38,7 @@ function getPagesUrls(URL){
 	var pagesAddresses = [];
 	rootURL = getRootUrl(URL);
 
-	if (getMethod(URL) == "QueryString"){
+	if (getMethod() == method.QueryString){
 		for (var i = 0; i < pageCount; i++){
 			pagesAddresses[i] = rootURL + "?i=" + i;
 		}
@@ -72,6 +85,11 @@ function loadContentAndShow(url, index){
 					all.append(processContent(pagesContents[i]));
 				}	
 				$("#gazeta_article").html(all);
+				$("#gazeta_article").prepend('<div id="slidesBack"><a id="slidesBackClick" class="loadButton" href="javascript:void(0)">Slajdy</a></div>');
+
+				$("#slidesBackClick").click(function(){
+					window.location.href = getRootUrl(url);
+				});
             }
         }
     });
@@ -92,16 +110,23 @@ function processContent(contentDoc){
 	return content;
 }
 
+function gazetaDetectSlides(){
+	return $("div.navigation a.next").length > 0;
+}
 
 var topWrap = $("#gazeta_article_tools");
 if (topWrap.length == 0)
 	topWrap = $("#gazeta_article_author"); 
+if (topWrap.length == 0)
+	topWrap = $("a.back");
 
-$(topWrap).after('<div id="loadAll"><a id="loadAllClick" class="loadButton" href="javascript:void(0)">Ładuj slajdy</a></div>');
-$("#loadAllClick").click(function(){
-	var imgURL = chrome.extension.getURL("ajax-loader.gif");
-	$('#loadAllClick').off('click');
-	$("#loadAllClick").html('Ładuję...');
-	console.log("clicked");
-	getContents(document.URL);	
-});
+if (gazetaDetectSlides()){
+	$(topWrap).after('<div id="loadAll"><a id="loadAllClick" class="loadButton" href="javascript:void(0)">Ładuj slajdy</a></div>');
+	$("#loadAllClick").click(function(){
+		var imgURL = chrome.extension.getURL("ajax-loader.gif");
+		$('#loadAllClick').off('click');
+		$("#loadAllClick").html('Ładuję...');
+		console.log("clicked");
+		getContents(document.URL);	
+	});
+}

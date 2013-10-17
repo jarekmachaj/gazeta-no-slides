@@ -12,7 +12,12 @@
           "http://plotek.pl/*", "http://www.plotek.pl/*", 
           "http://technologie.gazeta.pl/*", "http://www.technologie.gazeta.pl/*",
           "http://moto.pl/*", "http://www.moto.pl/*",
-          "http://wyborcza.pl/*", "http://www.wyborcza.pl/*"],
+          "http://wyborcza.pl/*", "http://www.wyborcza.pl/*",
+          "http://wiadomosci.gazeta.pl/*", "http://www.wiadomosci.gazeta.pl/*",
+          "http://avanti24.pl/*", "http://www.avanti24.pl/*",
+          "http://bryla.pl/*", "http://www.bryla.pl/*",
+          "http://www.ciacha.net/*", "http://ciacha.net/*",
+          "http://czterykaty.pl/*", "http://www.czterykaty.pl/*"],
         "js": ["jquery.js", "noslides.js"],
         "css": ["style.css"]
       }
