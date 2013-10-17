@@ -6,7 +6,7 @@ Gazeta No Slides is an an extension for Google Chrome. Every Gazeta.pl page that
 All slides are downloaded asynchronously and appended to the page without flicker.
 
 ### Result
-![](http://i.imgur.com/AVc3wab.png)
+![](http://i.imgur.com/uuq3zMu.png)
 
 ## Installation
 Download will be available soon.

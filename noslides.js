@@ -45,11 +45,7 @@ function getContents(URL){
 	pagesUrls.length = 0;	
 	pagesUrls = getPagesUrls(URL);
 	var length = pagesUrls.length;
-
-	var imgURL = chrome.extension.getURL("ajax-loader.gif");
-	$("#gazeta_article").html('<div style="width: 200px; margin: 0 auto;" id="loaderImage"><img id="someImage" src="' + imgURL + '" /></div>');
-	console.log(imgURL);
-
+	
 	for (var index = 0; index < length; index++){
 		loadContentAndShow(pagesUrls[index], index);
 	}
@@ -101,8 +97,11 @@ var topWrap = $("#gazeta_article_tools");
 if (topWrap.length == 0)
 	topWrap = $("#gazeta_article_author"); 
 
-$(topWrap).after('<div id="loadAll"><a id="loadAllClick" class="loadButton" href="javascript:void(0)">Ładuj wszystko</a></div>');
+$(topWrap).after('<div id="loadAll"><a id="loadAllClick" class="loadButton" href="javascript:void(0)">Ładuj slajdy</a></div>');
 $("#loadAllClick").click(function(){
+	var imgURL = chrome.extension.getURL("ajax-loader.gif");
+	$('#loadAllClick').off('click');
+	$("#loadAllClick").html('Ładuję...');
 	console.log("clicked");
 	getContents(document.URL);	
 });
