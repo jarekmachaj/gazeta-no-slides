@@ -17,7 +17,8 @@
           "http://avanti24.pl/*", "http://www.avanti24.pl/*",
           "http://bryla.pl/*", "http://www.bryla.pl/*",
           "http://www.ciacha.net/*", "http://ciacha.net/*",
-          "http://czterykaty.pl/*", "http://www.czterykaty.pl/*"],
+          "http://czterykaty.pl/*", "http://www.czterykaty.pl/*",
+          "http://domiwnetrze.pl/*", "http://www.domiwnetrze.pl/*"],
         "js": ["jquery.js", "noslides.js"],
         "css": ["style.css"]
       }
