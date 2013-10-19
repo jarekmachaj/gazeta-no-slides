@@ -18,7 +18,10 @@
           "http://bryla.pl/*", "http://www.bryla.pl/*",
           "http://www.ciacha.net/*", "http://ciacha.net/*",
           "http://czterykaty.pl/*", "http://www.czterykaty.pl/*",
-          "http://domiwnetrze.pl/*", "http://www.domiwnetrze.pl/*"],
+          "http://domiwnetrze.pl/*", "http://www.domiwnetrze.pl/*",
+          "http://domosfera.pl/*", "http://www.domosfera.pl/*",
+          "http://www.edziecko.pl/*", "http://edziecko.pl/*",
+          "http://e-ogrody.pl/*", "http://www.e-ogrody.pl/*"],
         "js": ["jquery.js", "noslides.js"],
         "css": ["style.css"]
       }

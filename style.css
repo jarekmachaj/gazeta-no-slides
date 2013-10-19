@@ -4,6 +4,15 @@
 	font-size: 16pt;
 	margin-top: 5px !important;
 	margin-bottom: 5px !important;
+	display: block !important;
+	float: left !important;
+	clear: both;
+}
+
+.contentWrapper {
+	color: black;
+	display: block;
+	float: left;
 }
 
 .loadButton {
@@ -47,7 +56,9 @@
 	background:-moz-linear-gradient( center top, #ce0100 5%, #fe1a00 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce0100', endColorstr='#fe1a00');
 	background-color:#ce0100;
-}.loadButton:active {
+}
+
+.loadButton:active {
 	position:relative;
 	top:1px;
 }

@@ -79,7 +79,7 @@ function loadContentAndShow(url, index){
             if(pagesContents.length >= pagesUrls.length)
             {
             	$("#gazeta_article").html("");	
-				var all = $('<div style="color: black"></div>');
+				var all = $('<div class="contentWrapper"></div>');
 
 				for (var i = 0; i < pagesContents.length ; i++) {
 					all.append(processContent(pagesContents[i]));
@@ -103,7 +103,7 @@ function processContent(contentDoc){
 	var gazetaBody = $($.parseHTML(contentDoc)).find("#gazeta_article_body");
 	var content = $("<div></div>");
 	content.append(lead);
-	content.append('<div class="slideTitle">' + (title ? title.innerHTML : "") + "</div>");
+	content.append('<div class="slideTitle">' + (title ? title.innerHTML : '') + '</div>');
 	content.append(gazetaImage);
 	content.append(gazetaImage2);
 	content.append(gazetaBody); 
