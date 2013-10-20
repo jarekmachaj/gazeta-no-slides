@@ -1,8 +1,8 @@
   {
-    "manifest_version": 3,
+    "manifest_version": 2,
     "name": "Gazeta No slides",
     "description": "One click. No more slides.",
-    "version": "3.0",
+    "version": "1.0",
     "options_page": "options.html",
     "permissions": [ "tabs", "http://*/*" ],
     "web_accessible_resources": ["ajax-loader.gif"],   
@@ -21,7 +21,9 @@
           "http://domiwnetrze.pl/*", "http://www.domiwnetrze.pl/*",
           "http://domosfera.pl/*", "http://www.domosfera.pl/*",
           "http://www.edziecko.pl/*", "http://edziecko.pl/*",
-          "http://e-ogrody.pl/*", "http://www.e-ogrody.pl/*"],
+          "http://e-ogrody.pl/*", "http://www.e-ogrody.pl/*",
+          "http://polygamia.pl/*", "http://www.polygamia.pl/*",
+          "http://namonciaku.pl/*", "http://www.namonciaku.pl/*"],
         "js": ["jquery.js", "noslides.js"],
         "css": ["style.css"]
       }
