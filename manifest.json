@@ -23,7 +23,15 @@
           "http://www.edziecko.pl/*", "http://edziecko.pl/*",
           "http://e-ogrody.pl/*", "http://www.e-ogrody.pl/*",
           "http://polygamia.pl/*", "http://www.polygamia.pl/*",
-          "http://namonciaku.pl/*", "http://www.namonciaku.pl/*"],
+          "http://namonciaku.pl/*", "http://www.namonciaku.pl/*",
+          "http://sport.pl/*", "http://www.sport.pl/*",
+          "http://www.swiatmotocykli.pl/*", "http://swiatmotocykli.pl/*",
+          "http://www.tokfm.pl/*", "http://tokfm.pl/*",
+          "http://tuba.pl/*", "http://www.tuba.pl/*",
+          "http://ugotuj.to/*", "http://www.ugotuj.to/*",
+          "http://wyborcza.biz/*", "http://www.wyborcza.biz/*",
+          "http://wysokieobcasy.pl/*", "http://www.wysokieobcasy.pl/*",
+          "http://zczuba.pl/*", "http://www.zczuba.pl/*"],
         "js": ["jquery.js", "noslides.js"],
         "css": ["style.css"]
       }
