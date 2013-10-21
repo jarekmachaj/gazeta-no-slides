@@ -7,6 +7,8 @@ var pagesUrls = [];
 var pagesContents = [];
 var rootURL;
 
+console.log(localStorage["noSlidesExtStatus"]);
+
 function getMethod(){
 
 	if(pageMethod != undefined) return pageMethod;
@@ -65,17 +67,13 @@ function getContents(URL){
 }
 
 function loadContentAndShow(url, index){
-	console.log(url);
 	$.ajax({
         url: pagesUrls[index],
         type: 'get',
         dataType: 'html',
         async: true,
         success: function(data) {
-        	console.log("iter: " + index);
-        	console.log("pagesContents.length: " + pagesContents.length);
             pagesContents[index] = data;
-            console.log("Length: " + pagesContents.length);
             if(pagesContents.length >= pagesUrls.length)
             {
             	$("#gazeta_article").html("");	
@@ -123,10 +121,9 @@ if (topWrap.length == 0)
 if (gazetaDetectSlides()){
 	$(topWrap).after('<div id="loadAll"><a id="loadAllClick" class="loadButton" href="javascript:void(0)">Ładuj slajdy</a></div>');
 	$("#loadAllClick").click(function(){
-		var imgURL = chrome.extension.getURL("ajax-loader.gif");
+		var imgURL = chrome.extension.getURL("resourcesajax-loader.gif");
 		$('#loadAllClick').off('click');
 		$("#loadAllClick").html('Ładuję...');
-		console.log("clicked");
 		getContents(document.URL);	
 	});
 }

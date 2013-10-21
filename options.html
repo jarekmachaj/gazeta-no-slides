@@ -1,12 +1,45 @@
+<!DOCTYPE html>
 <html>
-<head><title>Gazeta.pl No Slides</title></head>
-
-<body>
-<select id="selectOption">
- <option value="On">On</option>
- <option value="Off">Off</option>
-</select>
-<button id="save">Save</button>
-</body>
-
+  <head>  	
+    <title>Gazeta No Slides settings</title>
+    <style>    
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+  	<div class="container">
+  		<h2>Gazeta No Slides - Settings page</h2>
+  		<div class="tabbable"> <!-- Only required for left/right tabs -->
+		  <ul class="nav nav-tabs">
+		    <li class="active"><a href="#tab1" data-toggle="tab">Status</a></li>
+		    <li><a href="#tab2" data-toggle="tab">About</a></li>
+		  </ul>
+		  <div class="tab-content">
+		    <div class="tab-pane active" id="tab1">
+				<div class="well">
+					<div class="alert alert-success">
+  						Extension status: <strong><span id="extStatus">On</span></strong>
+					</div>			
+					<h5>Set status:</h5>
+			  		<div class="btn-group" data-toggle="buttons-radio">
+					  <button id="onBtnStatus" type="button" class="btn btn-success">On</button>
+					  <button id="offBtnStatus" type="button" class="btn btn-danger">Off</button>
+					</div>
+				</div>
+		    </div>
+		    <div class="tab-pane" id="tab2">
+	    		<div class="well">
+	      			<p>Comming soon</p>
+      			</div>
+		    </div>
+		  </div>
+		</div>  				
+	</div>    
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap/js/bootstrap-tab.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap/js/bootstrap-button.js"></script>
+    <script src="options.js"></script>
+  </body>
 </html>

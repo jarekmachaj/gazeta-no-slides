@@ -1,11 +1,11 @@
   {
     "manifest_version": 2,
     "name": "Gazeta No slides",
-    "description": "One click. No more slides.",
-    "version": "1.0",
+    "description": "No more slides on Gazeta.pl pages. All slides on single page with just one click.",
+    "version": "1.0.2",
     "options_page": "options.html",
     "permissions": [ "tabs", "http://*/*" ],
-    "web_accessible_resources": ["ajax-loader.gif"],   
+    "web_accessible_resources": ["resources/ajax-loader.gif", "scripts/jquery.min.map"],   
     "content_scripts": [
       {
         "matches": ["http://deser.pl/*", "http://www.deser.pl/*", 
@@ -31,9 +31,10 @@
           "http://ugotuj.to/*", "http://www.ugotuj.to/*",
           "http://wyborcza.biz/*", "http://www.wyborcza.biz/*",
           "http://wysokieobcasy.pl/*", "http://www.wysokieobcasy.pl/*",
-          "http://zczuba.pl/*", "http://www.zczuba.pl/*"],
-        "js": ["jquery.js", "noslides.js"],
-        "css": ["style.css"]
+          "http://zczuba.pl/*", "http://www.zczuba.pl/*",
+          "http://*.gazeta.pl/*", "http://www.gazeta.pl/*"],
+        "js": ["scripts/jquery.js", "noslides.js"],
+        "css": ["styles/style.css"]
       }
     ]
 }
