@@ -23,15 +23,17 @@ function statusChange(status){
 }
 
 function saveOptions() {		  
-  localStorage["noSlidesExtStatus"] = currStatus;
+  chrome.storage.sync.set({'noSlidesExtStatus': currStatus});
 }
 
 function restoreOptions() {
-  var extcurrstatus = localStorage["noSlidesExtStatus"];
-  if (!extcurrstatus) {
-    return;
-  }
-  statusChange(extcurrstatus);
+  var extcurrstatus;
+  chrome.storage.sync.get('noSlidesExtStatus', function(extcurrstatus){
+    if (!extcurrstatus) {
+        return;
+    }
+    statusChange(extcurrstatus.noSlidesExtStatus);
+  });
 }
 
 $("#onBtnStatus").click(function(){statusChange(extStatus.On)});

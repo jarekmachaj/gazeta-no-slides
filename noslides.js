@@ -7,10 +7,18 @@ var pagesUrls = [];
 var pagesContents = [];
 var rootURL;
 
-console.log(localStorage["noSlidesExtStatus"]);
+chrome.storage.sync.get('noSlidesExtStatus', function(currExtStatus){
+	if (!currExtStatus) {
+	    return;
+	}
+
+	if (currExtStatus.noSlidesExtStatus == "On"){
+		loadExtension();
+	}
+});
+
 
 function getMethod(){
-
 	if(pageMethod != undefined) return pageMethod;
 
 	var urlToParse = "";
@@ -112,18 +120,20 @@ function gazetaDetectSlides(){
 	return $("div.navigation a.next").length > 0;
 }
 
-var topWrap = $("#gazeta_article_tools");
-if (topWrap.length == 0)
-	topWrap = $("#gazeta_article_author"); 
-if (topWrap.length == 0)
-	topWrap = $("a.back");
+function loadExtension(){
+	var topWrap = $("#gazeta_article_tools");
+	if (topWrap.length == 0)
+		topWrap = $("#gazeta_article_author"); 
+	if (topWrap.length == 0)
+		topWrap = $("a.back");
 
-if (gazetaDetectSlides()){
-	$(topWrap).after('<div id="loadAll"><a id="loadAllClick" class="loadButton" href="javascript:void(0)">Ładuj slajdy</a></div>');
-	$("#loadAllClick").click(function(){
-		var imgURL = chrome.extension.getURL("resourcesajax-loader.gif");
-		$('#loadAllClick').off('click');
-		$("#loadAllClick").html('Ładuję...');
-		getContents(document.URL);	
-	});
+	if (gazetaDetectSlides()){
+		$(topWrap).after('<div id="loadAll"><a id="loadAllClick" class="loadButton" href="javascript:void(0)">Ładuj slajdy</a></div>');
+		$("#loadAllClick").click(function(){
+			var imgURL = chrome.extension.getURL("resourcesajax-loader.gif");
+			$('#loadAllClick').off('click');
+			$("#loadAllClick").html('Ładuję...');
+			getContents(document.URL);	
+		});
+	}
 }
