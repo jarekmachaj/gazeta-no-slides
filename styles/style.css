@@ -14,6 +14,21 @@
 	clear: both;
 }
 
+.slideTopTitle {
+	font-size: 26px;
+font-weight: bold;
+line-height: normal;
+margin: 0 0 7px;
+font-style: normal;
+padding: 0;
+display: block;
+font-size: 2em;
+-webkit-margin-before: 0.67em;
+-webkit-margin-after: 0.67em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+}
+
 .contentWrapper {
 	color: black;
 	display: block;

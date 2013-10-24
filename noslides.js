@@ -84,14 +84,14 @@ function loadContentAndShow(url, index){
             pagesContents[index] = data;
             if(pagesContents.length >= pagesUrls.length)
             {
-            	$("#gazeta_article").html("");	
+            	$("#content_wrap").html("");	
 				var all = $('<div class="contentWrapper"></div>');
 
 				for (var i = 0; i < pagesContents.length ; i++) {
-					all.append(processContent(pagesContents[i]));
+					all.append(processContent(pagesContents[i], i == 0));
 				}	
-				$("#gazeta_article").html(all);
-				$("#gazeta_article").prepend('<div id="slidesBack"><a id="slidesBackClick" class="loadButton" href="javascript:void(0)">Slajdy</a></div>');
+				$("#content_wrap").html(all);
+				$("#content_wrap").prepend('<div id="slidesBack"><a id="slidesBackClick" class="loadButton" href="javascript:void(0)">Slajdy</a></div>');
 
 				$("#slidesBackClick").click(function(){
 					window.location.href = getRootUrl(url);
@@ -101,13 +101,17 @@ function loadContentAndShow(url, index){
     });
 }
 
-function processContent(contentDoc){
+function processContent(contentDoc, isfirst){
+	var topLead = $($.parseHTML(contentDoc)).find("#gazeta_article_top h1")[0];
 	var lead = $($.parseHTML(contentDoc)).find("#gazeta_article_lead");
 	var title = $($.parseHTML(contentDoc)).find(".navigation span")[0];
 	var gazetaImage = $($.parseHTML(contentDoc)).find("#gazeta_article_image");
 	var gazetaImage2 = $($.parseHTML(contentDoc)).find("#gazeta_article_image_new");
 	var gazetaBody = $($.parseHTML(contentDoc)).find("#gazeta_article_body");
 	var content = $("<div></div>");
+	
+	if (isfirst) content.append('<div class="slideTopTitle">' + topLead.innerHTML + "</div>");
+	
 	content.append(lead);
 	content.append('<div class="slideTitle">' + (title ? title.innerHTML : '') + '</div>');
 	content.append(gazetaImage);
