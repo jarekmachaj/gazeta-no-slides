@@ -3,6 +3,11 @@
 	margin-right: 10px;
 }
 
+#opinions{
+	float: left !important;
+	clear: both !important;
+}
+
 .slideTitle {
 	color: black;
 	font-weight: bold;
@@ -33,6 +38,7 @@ font-size: 2em;
 	color: black;
 	display: block;
 	float: left;
+	clear: both;
 }
 
 .loadButton {

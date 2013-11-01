@@ -89,9 +89,14 @@ function loadContentAndShow(url, index){
 
 				for (var i = 0; i < pagesContents.length ; i++) {
 					all.append(processContent(pagesContents[i], i == 0));
-				}	
+				}
+
+				//last document
+				var comments = getComments(pagesContents[[pagesContents.length - 1]]);
+
 				$("#content_wrap").html(all);
 				$("#content_wrap").prepend('<div id="slidesBack"><a id="slidesBackClick" class="loadButton" href="javascript:void(0)">Slajdy</a></div>');
+				$("#content_wrap").append(comments);
 
 				$("#slidesBackClick").click(function(){
 					window.location.href = getRootUrl(url);
@@ -110,8 +115,10 @@ function processContent(contentDoc, isfirst){
 	var gazetaBody = $($.parseHTML(contentDoc)).find("#gazeta_article_body");
 	var content = $("<div></div>");
 	
-	if (isfirst) content.append('<div class="slideTopTitle">' + topLead.innerHTML + "</div>");
-	
+	if (isfirst && topLead) {
+		content.append('<div class="slideTopTitle">' + topLead.innerHTML + "</div>");
+	}
+
 	content.append(lead);
 	content.append('<div class="slideTitle">' + (title ? title.innerHTML : '') + '</div>');
 	content.append(gazetaImage);
@@ -140,4 +147,9 @@ function loadExtension(){
 			getContents(document.URL);	
 		});
 	}
+}
+
+function getComments(contentDoc){
+	var comments = $($.parseHTML(contentDoc)).find("#opinions");
+	return comments;
 }
