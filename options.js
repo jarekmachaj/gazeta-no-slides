@@ -1,4 +1,5 @@
 var extStatus = {On: "On", Off : "Off"};
+var services = ["avanti24.pl", "bryla.pl", "ciacha.net", "czterykaty.pl", "deser.pl", "domiwnetrze.pl", "domosfera.pl", "e-ogrody.pl", "edziecko.pl", "gazeta.pl", "lula.pl", "moto.pl", "namonciaku.pl", "plotek.pl", "polygamia.pl", "sport.pl", "swiatmotocykli.pl", "technologie.gazeta.pl", "tokfm.pl", "tuba.pl", "ugotuj.to", "wiadomosci.gazeta.pl", "wyborcza.biz", "wyborcza.pl", "wysokieobcasy.pl", "zczuba.pl"]
 var currStatus;
 
 function statusChange(status){

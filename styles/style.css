@@ -42,7 +42,10 @@ font-size: 2em;
 }
 
 .loadButton {
-	margin: 5px;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #f29c93;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #f29c93;
 	box-shadow:inset 0px 1px 0px 0px #f29c93;
@@ -72,7 +75,7 @@ font-size: 2em;
 	font-style:normal;
 	height:36px;
 	line-height:36px;
-	width:156px;
+	width:95%;
 	text-decoration:none;
 	text-align:center;
 	text-shadow:1px 1px 0px #b23e35;
