@@ -9,6 +9,7 @@
 }
 
 .slideTitle {
+	background: white;
 	color: black;
 	font-weight: bold;
 	font-size: 16pt;
@@ -36,6 +37,7 @@ font-size: 2em;
 
 .contentWrapper {
 	color: black;
+	background: white;
 	display: block;
 	float: left;
 	clear: both;
