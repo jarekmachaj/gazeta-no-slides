@@ -1,7 +1,7 @@
   {
     "manifest_version": 2,
     "name": "Gazeta No slides",
-    "description": "No more slides on Gazeta.pl pages. All slides on single page with just one click.",
+    "description": "No more slides on Gazeta.pl pages. All slides merged into one article on single page with just one click.",
     "version": "1.0.3",
     "options_page": "options.html",
     "permissions": [ "tabs", "http://*/*", "storage" ],
@@ -36,7 +36,8 @@
           "http://wysokieobcasy.pl/*", "http://www.wysokieobcasy.pl/*",
           "http://zczuba.pl/*", "http://www.zczuba.pl/*",
           "http://*.gazeta.pl/*", "http://www.gazeta.pl/*",
-          "http://lula.pl/*", "http://www.lula.pl/*"],
+          "http://lula.pl/*", "http://www.lula.pl/*",
+          "http://magazyn-kuchnia.pl/*", "http://www.magazyn-kuchnia.pl/*"],
         "js": ["scripts/jquery.js", "noslides.js"],
         "css": ["styles/style.css"]
       }
