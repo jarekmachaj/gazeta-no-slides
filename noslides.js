@@ -49,15 +49,19 @@ function getPagesUrls(URL){
 	rootURL = getRootUrl(URL);
 
 	if (getMethod() == method.QueryString){
+		
 		for (var i = 0; i < pageCount; i++){
 			pagesAddresses[i] = rootURL + "?i=" + i;
 		}
+
 	} else {
+		
 		var tempUrlArr = rootURL.split('.html');
 		pagesAddresses[0] =  tempUrlArr[0] + '.html';
 		for (var i = 2; i <= pageCount; i++) {
 			pagesAddresses[i-1] =  tempUrlArr[0] + ',,,' + i + '.html'; 
 		}
+		
 	}
 
 	return pagesAddresses;

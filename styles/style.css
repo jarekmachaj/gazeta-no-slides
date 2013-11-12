@@ -1,3 +1,18 @@
+#loadAll{
+	margin-bottom: 25px;
+}
+
+#gazeta_article_body img{
+	display: block;
+	margin: 5px;
+}
+
+#gazeta_article_image_new img {
+	display: block;
+	margin: 5px;	
+	clear: both;
+}
+
 .extStatus{
 	margin-left: 10px;
 	margin-right: 10px;
