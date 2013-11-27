@@ -41,7 +41,9 @@
           "http://*.gazeta.pl/*", "http://www.gazeta.pl/*",
           "http://lula.pl/*", "http://www.lula.pl/*",
           "http://magazyn-kuchnia.pl/*", "http://www.magazyn-kuchnia.pl/*",
-          "http://logo24.pl/*", "http://www.logo24.pl/*"],
+          "http://logo24.pl/*", "http://www.logo24.pl/*",
+          "http://nanarty.sport.pl/*", "http://www.nanarty.sport.pl/*",
+          "http://krakow.gazeta.pl/*", "http://www.krakow.gazeta.pl/*"],
         "js": ["scripts/jquery.js", "noslides.js"],
         "css": ["styles/style.css"]
       }
